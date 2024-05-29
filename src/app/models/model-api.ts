@@ -1,2 +1,4 @@
-export class ModelApi {
+export interface ModelApi {
+    image: string;
+    title: string;
 }

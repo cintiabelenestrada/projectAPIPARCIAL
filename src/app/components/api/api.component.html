@@ -1,1 +1,21 @@
-<p>api works!</p>
+<button type="button" id="DireccionIp" name="DireccionIp" (click)="mostrarDatosDeApi()">PRIMER API</button>
+<!-- TABLA -->
+<h3 class="mt-5 d-flex justify-content-center">LISTADO DE RECETAS: </h3>
+<table class="table">
+   <thead>
+     <tr>
+       <th scope="col">Path</th>
+       <th scope="col">Title</th>
+       <th scope="col">Imagen</th>
+     </tr>
+   </thead>
+   <tbody>
+    @for (item of datosRecetas; track $index) {
+      <tr>
+         <td></td>
+         <td><h1>{{item.title}}</h1></td>
+         <td><img src={{item.image}}></td>
+       </tr> 
+     }
+   </tbody>
+ </table>
