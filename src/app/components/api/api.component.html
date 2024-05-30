@@ -2,20 +2,39 @@
 <!-- TABLA -->
 <h3 class="mt-5 d-flex justify-content-center">LISTADO DE RECETAS: </h3>
 <table class="table">
-   <thead>
-     <tr>
-       <th scope="col">Path</th>
-       <th scope="col">Title</th>
-       <th scope="col">Imagen</th>
-     </tr>
-   </thead>
-   <tbody>
-    @for (item of datosRecetas; track $index) {
-      <tr>
-         <td></td>
-         <td><h1>{{item.title}}</h1></td>
-         <td><img src={{item.image}}></td>
-       </tr> 
-     }
-   </tbody>
- </table>
+    <thead>
+        <tr>
+            <th scope="col">Path</th>
+            <th scope="col">Title</th>
+            <th scope="col">Imagen</th>
+            <th scope="col">Ver Receta</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (item of datosRecetas; track $index) {
+        <tr>
+            <td>
+                <p>{{item.path}}</p>
+            </td>
+            <td>
+                <h3>{{item.title}}</h3>
+            </td>
+            <td><img src={{item.image}}></td>
+            <td>
+                <button type="button" id="DireccionIp" name="DireccionIp" (click)="mostrarDetalle(item.path)">Ver Receta</button>    
+                <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    Ver Receta
+                </button>
+                <div class="modal-dialog modal-dialog-scrollable">
+                    @for (item of detallesRecetas; track $index) {
+                    <td><a href="{{item.ingredientes}}">Ver Receta</a></td>
+                    <td><a href="{{item.pasos}}">Ver Receta</a></td>
+                    }
+                </div> -->
+            </td>
+            
+
+        </tr>
+        }
+    </tbody>
+</table>
