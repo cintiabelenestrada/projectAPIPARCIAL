@@ -28,11 +28,11 @@ export class ApiComponent {
   }
   mostrarDetalle(path:string) {
     this.recetasPopuService.getDetallesRecetas(path).subscribe(
-      (data: any) => {
+      (detalles: any) => {
         console.log('path ',path);
         
-        this.detallesRecetas = data;
-        console.log('data.Detalles Recetas: ', JSON.stringify(this.detallesRecetas));
+        this.detallesRecetas = detalles;
+        console.log('detalles.Detalles Recetas: ', JSON.stringify(this.detallesRecetas));
 
         this.openModal()
       },

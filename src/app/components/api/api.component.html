@@ -38,6 +38,14 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
                     (click)="closeModal()"></button>
             </div>
+
+            <div class="modal-body">
+                @for (ingrediente of detallesRecetas; track $index) {
+                    <h3>INGREDIENTES:</h3>
+                    <p>{{ ingrediente.Ingredientes}}</p>
+                    <!-- <p><strong>PASOS:</strong> {{ detallesRecetas.pasos }}</p> -->
+                }
+            </div>
             
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"

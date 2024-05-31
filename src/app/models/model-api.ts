@@ -3,6 +3,7 @@ export interface ModelApi {
     title: string;
     path: string;
 }
+
 export interface DetallesReceta{
     Ingredientes: string[];
     // 'Pasos de preparacion': string[];
