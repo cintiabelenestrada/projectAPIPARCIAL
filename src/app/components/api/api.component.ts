@@ -12,7 +12,9 @@ import { DetallesReceta, ModelApi, } from '../../models/model-api';
 export class ApiComponent {
   datosRecetas!: ModelApi[];
   detallesRecetas!: DetallesReceta[];
+
   constructor(private recetasPopuService: RecetasPopuService) {}
+
   mostrarDatosDeApi() {
     this.recetasPopuService.getObtenerRecetas().subscribe(
       (data: any) => {
@@ -31,10 +33,24 @@ export class ApiComponent {
         
         this.detallesRecetas = data;
         console.log('data.Detalles Recetas: ', JSON.stringify(this.detallesRecetas));
+
+        this.openModal()
       },
       (error: any) => {
         console.log(error);
       }
     );
+  }
+  openModal(): void {
+    const modelDiv = document.getElementById('myModal')
+    if (modelDiv!=null) {
+      modelDiv.style.display = 'block';
+    }
+  }
+  closeModal(): void {
+    const modelDiv = document.getElementById('myModal')
+    if (modelDiv!=null) {
+      modelDiv.style.display = 'none';
+    }
   }
 }

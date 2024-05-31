@@ -21,20 +21,28 @@
             </td>
             <td><img src={{item.image}}></td>
             <td>
-                <button type="button" id="DireccionIp" name="DireccionIp" (click)="mostrarDetalle(item.path)">Ver Receta</button>    
-                <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                    Ver Receta
-                </button>
-                <div class="modal-dialog modal-dialog-scrollable">
-                    @for (item of detallesRecetas; track $index) {
-                    <td><a href="{{item.ingredientes}}">Ver Receta</a></td>
-                    <td><a href="{{item.pasos}}">Ver Receta</a></td>
-                    }
-                </div> -->
+                <button type="button" class="btn btn-primary" (click)="mostrarDetalle(item.path)">Ver Receta</button>
             </td>
-            
-
         </tr>
         }
     </tbody>
 </table>
+
+<button type="button" (click)="openModal()">Open modal</button>
+<div class="modal fade show" id="myModal" tabindex="-1" aria-labelledby="exampleModalFullscreenLabel"
+    style="display: none;" aria-modal="true" role="dialog">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-4" id="exampleModalFullscreenLabel">Full screen modal</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                    (click)="closeModal()"></button>
+            </div>
+            
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                    (click)="closeModal()">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
