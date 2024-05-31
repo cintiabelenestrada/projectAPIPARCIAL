@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RecetasPopuService } from '../../services/recetasPopu.service';
-import { DetallesReceta, ModelApi, } from '../../models/model-api';
+import { ModelApi, } from '../../models/model-api';
 
 @Component({
   selector: 'app-api',
@@ -11,7 +11,7 @@ import { DetallesReceta, ModelApi, } from '../../models/model-api';
 })
 export class ApiComponent {
   datosRecetas!: ModelApi[];
-  detallesRecetas!: DetallesReceta[];
+  detallesRecetas!: string[];
 
   constructor(private recetasPopuService: RecetasPopuService) {}
 
@@ -28,10 +28,14 @@ export class ApiComponent {
   }
   mostrarDetalle(path:string) {
     this.recetasPopuService.getDetallesRecetas(path).subscribe(
-      (detalles: any) => {
+      (data: any) => {
         console.log('path ',path);
+        console.log('data ',JSON.stringify(data));
+
+        console.log('ingredientes ',JSON.stringify(data.Ingredientes));
         
-        this.detallesRecetas = detalles;
+        
+        this.detallesRecetas = data.Ingredientes;
         console.log('detalles.Detalles Recetas: ', JSON.stringify(this.detallesRecetas));
 
         this.openModal()

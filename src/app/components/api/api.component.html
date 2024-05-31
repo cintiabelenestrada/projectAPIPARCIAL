@@ -34,16 +34,15 @@
     <div class="modal-dialog modal-fullscreen">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-4" id="exampleModalFullscreenLabel">Full screen modal</h1>
+                <h1 class="modal-title fs-4" id="exampleModalFullscreenLabel">Detalles de los ingredientes</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
                     (click)="closeModal()"></button>
             </div>
 
             <div class="modal-body">
-                @for (ingrediente of detallesRecetas; track $index) {
-                    <h3>INGREDIENTES:</h3>
-                    <p>{{ ingrediente.Ingredientes}}</p>
-                    <!-- <p><strong>PASOS:</strong> {{ detallesRecetas.pasos }}</p> -->
+                <h3>INGREDIENTES:</h3>
+                @for (item of detallesRecetas; track $index) {
+                    <p>{{item}}</p>
                 }
             </div>
             
